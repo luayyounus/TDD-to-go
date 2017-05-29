@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    func numberOfVowelsInString(string: String) -> Int {
+    func numberOfVowelsInString(string : String) -> Int {
         let vowels : [Character] = ["a","e","i","o","u","A","E","I","O","U"]
         
         var numberOfVowels = 0
