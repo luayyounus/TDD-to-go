@@ -32,5 +32,18 @@ class TDD_to_GoTests: XCTestCase {
         XCTAssertEqual(numberOfVowels, 2, "should find 2 vowels in Luay")
         
     }
-
+    
+    func testNumbersToSpelledNumbers() {
+        
+        let viewController = ViewController()
+        
+        let arrayOfNumbers = [11,22,33,44]
+        
+        let stringifiedNumbers = viewController.numbersToSpelledNumbers(numbers: arrayOfNumbers as [NSNumber])
+        
+        XCTAssertNotNil(stringifiedNumbers, "We are getting something from the number")
+        
+        print("Stringified Numbers: \(stringifiedNumbers)")
+        
+    }
 }
