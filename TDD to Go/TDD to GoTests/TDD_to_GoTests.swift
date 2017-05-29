@@ -33,4 +33,10 @@ class TDD_to_GoTests: XCTestCase {
         }
     }
     
+    func testVowelOfStrings(){
+        //Will come back here later to test the method
+    }
+    
+    
+    
 }
