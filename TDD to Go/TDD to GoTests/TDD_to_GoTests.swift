@@ -22,6 +22,7 @@ class TDD_to_GoTests: XCTestCase {
     }
     
     func testNumberOfVowelsInString_ShouldReturnNumberOfVowels() {
+        
         let viewController = ViewController()
         
         let string = "Luay"
@@ -31,4 +32,5 @@ class TDD_to_GoTests: XCTestCase {
         XCTAssertEqual(numberOfVowels, 2, "should find 2 vowels in Luay")
         
     }
+
 }
