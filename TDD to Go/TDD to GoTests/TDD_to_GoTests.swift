@@ -21,16 +21,16 @@ class TDD_to_GoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testNumberOfVowelsInString_ShouldReturnNumberOfVowels() {
+        
+        let viewController = ViewController()
+        
+        let string = "Luay"
+        
+        let numberOfVowels = viewController.numberOfVowelsInString(string : string)
+        
+        XCTAssertEqual(numberOfVowels, 2, "should find 2 vowels in Luay")
+        
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
 }
