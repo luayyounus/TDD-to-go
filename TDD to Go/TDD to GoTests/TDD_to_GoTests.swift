@@ -46,4 +46,12 @@ class TDD_to_GoTests: XCTestCase {
         print("Stringified Numbers: \(stringifiedNumbers)")
         
     }
+    
+    func testSumArray() {
+        let viewController = ViewController()
+        let someArrayOfnums = [5,7,9,3,5,32,3,56,74]
+        
+        let result = viewController.sumArray(nums: someArrayOfnums)
+        XCTAssertNil(result)
+    }
 }
