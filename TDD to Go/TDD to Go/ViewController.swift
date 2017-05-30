@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         print(flattenAnArryWithoutOptionals(nestedArray:["A",nil,"B"]))
-        sumArray()
     }
 
     func numberOfVowelsInString(string : String) -> Int {
@@ -28,11 +27,12 @@ class ViewController: UIViewController {
         return nestedArray.flatMap{ $0 }
     }
     
-    func sumArray() {
-        let arrayOfNumbers = [1,5,0,4]
-        let sum = arrayOfNumbers.filter{$0 > 3}.reduce(0, {$0 + $1})
-        print(sum)
+    func sumArray(nums:[Int]) -> Int? {
+        let sum = nums.filter{$0 < 3}.reduce(0, {$0 + $1})
+        if sum == 0 {
+            return nil
+        }
+        return sum
     }
-    
 }
 
