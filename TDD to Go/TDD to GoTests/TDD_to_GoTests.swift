@@ -11,8 +11,11 @@ import XCTest
 
 class TDD_to_GoTests: XCTestCase {
     
+    var viewController: ViewController!
+
     override func setUp() {
         super.setUp()
+        viewController = ViewController()
     }
     
     override func tearDown() {
@@ -22,7 +25,6 @@ class TDD_to_GoTests: XCTestCase {
     //Number of Vowels in String using Reduce
     func testNumberOfVowelsInString_ShouldReturnNumberOfVowels() {
         
-        let viewController = ViewController()
         let name = "Luay"
         let numberOfVowels = viewController.numberOfVowelsInString(string : name)
         
@@ -33,7 +35,6 @@ class TDD_to_GoTests: XCTestCase {
     //Convert Numbers into Spelled Numbers
     func testNumbersToSpelledNumbers() {
         
-        let viewController = ViewController()
         let arrayOfNumbers = [11,22,33,44]
         
         let stringifiedNumbers = viewController.numbersToSpelledNumbers(numbers: arrayOfNumbers as [NSNumber])
@@ -47,7 +48,6 @@ class TDD_to_GoTests: XCTestCase {
     //Flatten an Array without optional 'nil' using FlatMap
     func testFlattenAnArryWithoutOptionals(){
         
-        let viewController = ViewController()
         var arrayWithoutNil:[String]? = viewController.flattenAnArryWithoutOptionals(nestedArray: ["Horse",nil,"Cat","Dog",nil,nil,"Parrot"])
         
         if (arrayWithoutNil?.count)! > 5 {
@@ -60,7 +60,6 @@ class TDD_to_GoTests: XCTestCase {
     //Sum of Array using Filter and Reduce
     func testSumArray() {
         
-        let viewController = ViewController()
         let someArrayOfnums = [5,7,9,3,5,32,3,56,74]
         let result = viewController.sumArray(nums: someArrayOfnums)
         
@@ -69,12 +68,9 @@ class TDD_to_GoTests: XCTestCase {
     
     func testZipStudentsInfo_ShouldReturnArrayOfStudentsNamesAndGrades(){
         
-        let viewController = ViewController()
         let result = viewController.zipStudentsInfo(names: ["Luay","Brandon"], grades: [88,89])
         for student in result {
             XCTAssertTrue(student is Dictionary<String, Any>, "Type returned is not dictionary of type [String:Any], check the function")
         }
     }
-    
-    //TDD
 }
