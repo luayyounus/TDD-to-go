@@ -25,11 +25,11 @@ class TDD_to_GoTests: XCTestCase {
         
         let viewController = ViewController()
         
-        let string = "Luay"
+        let name = "Luay"
         
-        let numberOfVowels = viewController.numberOfVowelsInString(string : string)
+        let numberOfVowels = viewController.numberOfVowelsInString(string : name)
         
-        XCTAssertEqual(numberOfVowels, 2, "should find 2 vowels in Luay")
+        XCTAssertEqual(numberOfVowels, 2, "should find 2 vowels in \(name)",file: "TDD_to_GoTests.swift", line: 24)
         
     }
     
@@ -41,7 +41,7 @@ class TDD_to_GoTests: XCTestCase {
         
         let stringifiedNumbers = viewController.numbersToSpelledNumbers(numbers: arrayOfNumbers as [NSNumber])
         
-        XCTAssertNotNil(stringifiedNumbers, "We are getting something from the number")
+        XCTAssertNotNil(stringifiedNumbers, "result shouldn't return nil")
         
         print("Stringified Numbers: \(stringifiedNumbers)")
         
@@ -52,6 +52,15 @@ class TDD_to_GoTests: XCTestCase {
         let someArrayOfnums = [5,7,9,3,5,32,3,56,74]
         
         let result = viewController.sumArray(nums: someArrayOfnums)
-        XCTAssertNil(result)
+        XCTAssertTrue(result == nil,"result should return nil back")
+    }
+    
+    func testZipStudentsInfo_ShouldReturnArrayOfStudentsNamesAndGrades(){
+        let viewController = ViewController()
+    
+        let result = viewController.zipStudentsInfo(names: ["Luay","Brandon"], grades: [88,89])
+        for student in result {
+            XCTAssertTrue(student is Dictionary<String, Any>, "Type returned is not dictionary of type [String:Any], check the function")
+        }
     }
 }

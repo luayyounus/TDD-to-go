@@ -34,5 +34,15 @@ class ViewController: UIViewController {
         }
         return sum
     }
+    
+    func zipStudentsInfo(names: [String], grades: [Int]) -> [[String:Any]] {
+        let zippedStudents = zip(names, grades)
+        
+        let studentsZippedArray:[[String:Any]] = zippedStudents.map { (student) -> [String:Any] in
+            let stud: [String:Any] = ["Name":student.0,"Grade":student.1]
+            return stud
+        }
+        return studentsZippedArray
+    }
 }
 
