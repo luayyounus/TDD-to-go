@@ -54,4 +54,13 @@ class TDD_to_GoTests: XCTestCase {
         let result = viewController.sumArray(nums: someArrayOfnums)
         XCTAssertTrue(result == nil,"result should return nil back")
     }
+    
+    func testZipStudentsInfo_ShouldReturnArrayOfStudentsNamesAndGrades(){
+        let viewController = ViewController()
+    
+        let result = viewController.zipStudentsInfo(names: ["Luay","Brandon"], grades: [88,89])
+        for student in result {
+            XCTAssertTrue(student is Dictionary<String, Any>, "Type returned is not dictionary of type [String:Any], check the function")
+        }
+    }
 }
