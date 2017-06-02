@@ -73,4 +73,12 @@ class TDD_to_GoTests: XCTestCase {
             XCTAssertTrue(student is Dictionary<String, Any>, "Type returned is not dictionary of type [String:Any], check the function")
         }
     }
+    
+    //Capitilize first Letter in a string
+    func testMakeHeadline(){
+        let inputString = "i am going to be capitalized at the beginning"
+        let expectedString = "I Am Going To Be Capitalized At The Beginning"
+        let headline = viewController.makeHeadline(string: inputString)
+        XCTAssertEqual(headline, expectedString)
+    }
 }
