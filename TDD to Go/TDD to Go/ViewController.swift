@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         return string.characters.reduce(0, { $0 + (vowels.contains($1) ? 1 : 0)})
     }
     
+    
     func numbersToSpelledNumbers(numbers : [NSNumber]) -> [String] {
         return numbers.map { NumberFormatter.localizedString(from: $0, number: .spellOut) }
     }
@@ -41,5 +42,15 @@ class ViewController: UIViewController {
         }
         return studentsZippedArray
     }
+    
+    func makeHeadline(string:String) -> String {
+        let words = string.components(separatedBy: " ")
+        var headline = ""
+        headline = words.map { (word) -> String in
+            var word = word
+            let firstCharacter = word.remove(at: word.startIndex)
+            return "\(String(firstCharacter).uppercased())\(word)"
+        }.joined(separator:" ")
+        return headline
+    }
 }
-
