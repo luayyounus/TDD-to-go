@@ -53,4 +53,19 @@ class ViewController: UIViewController {
         }.joined(separator:" ")
         return headline
     }
+
+}
+
+//Linear Search and Generic Array of Integers using Comparable
+let numbers : Array<Int> = [5,2,67,3]
+
+extension Array where Element : Comparable {
+    func linearSearch(forElement key: Element) -> Bool {
+        for number in self {
+            if number == key{
+                return true
+            }
+        }
+        return false
+    }
 }
